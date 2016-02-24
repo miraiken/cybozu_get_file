@@ -32,7 +32,7 @@ void download(const std::basic_string<char_type1>& url, const std::basic_string<
 	const std::string cmd = std::string("curl") + ' ' + header_base + R"( --header "Cookie: )" + cokie + R"(" -L ")" + char_cvt::to_string(url, type) + R"(" -o ")" + char_cvt::to_string(out_filename, type) + "\"";
 	std::cout << "downloading " << char_cvt::to_string(out_filename, type) << std::endl;
 	std::system(cmd.c_str());//exec
-	std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(2500));//岡崎市立中央図書館事件を忘れることなかれ
 }
 std::wstring make_dl_file_utl(const std::wstring& group_id, const std::wstring& cid)
 {
